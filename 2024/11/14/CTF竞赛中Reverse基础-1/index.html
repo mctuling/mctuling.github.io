@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World！ |
+            CTF竞赛中Reverse基础 |
         
         Keep Theme
     </title>
@@ -161,7 +161,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Hello World！
+                        CTF竞赛中Reverse基础
                     </div>
                 
 
@@ -174,7 +174,7 @@
                         
                         <div class="info-box">
                             <div class="author border-box">
-                                <span class="name">Keep Team</span>
+                                <span class="name">Tuling</span>
                                 
                                     <span class="author-badge">Lv1</span>
                                 
@@ -189,12 +189,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-10-28 22:49:05</span>
+                <span class="datetime">2024-11-14 19:33:25</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Oct 28 2024 22:55:04 GMT+0800">2024-10-28 22:55:04</span>
+                <span class="datetime" data-updated="Thu Nov 14 2024 19:35:06 GMT+0800">2024-11-14 19:35:06</span>
             </span>
         
 
@@ -220,19 +220,33 @@
                     
 
                     
-                         <p>欢迎来到 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! 这是您的第一篇文章。 查看 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> 了解更多信息。 如果你在使用 Hexo, 你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">故障排除</a>找到答案或者在  <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>问我。</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="部署到远程站点（Deploy-to-remote-sites）"><a href="#部署到远程站点（Deploy-to-remote-sites）" class="headerlink" title="部署到远程站点（Deploy to remote sites）"></a>部署到远程站点（Deploy to remote sites）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                         <h1 id="CTF竞赛中Reverse基础"><a href="#CTF竞赛中Reverse基础" class="headerlink" title="CTF竞赛中Reverse基础"></a>CTF竞赛中Reverse基础</h1><p><strong>wiki中泛指的逆向：</strong></p>
+<p><em><strong>Reverse engineering, also called back engineering, is the process by which a man-made object is deconstructed to reveal its designs, architecture, or to extract knowledge from the object; —— from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Reverse_engineering">wikipedia</a></strong></em></p>
+<p><em>软件代码逆向主要指对软件的结构，流程，算法，代码等进行逆向拆解和分析。</em></p>
+<p><strong>而在CTF比赛中的逆向：</strong></p>
+<p><em>涉及 Windows、Linux、Android 平台的多种编程技术，要求利用常用工具对源代码及二进制文件进行逆向分析，掌握 Android 移动应用 APK 文件的逆向分析，掌握加解密、内核编程、算法、反调试和代码混淆技术。 —— 《全国大学生信息安全竞赛参赛指南》</em></p>
+<p>简单来说，就是要求参赛者理解并分析没有源代码的程序，<strong>逆向分析代码</strong>从而找到隐藏的flag。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p><strong>计算机语言：</strong>熟悉C&#x2F;C++语言（分析IDA反编译后的伪c&#x2F;c++代码），python语言（方便写脚本），<strong>汇编语言（assembly language）</strong><br>其中的汇编语言，在不同的设备中对应着不同的<strong>机器语言指令集</strong>。常见的指令集有<strong>x86&#x2F;amd64，MIPS，ARM</strong>。</p>
+<p><strong>计算机知识：</strong>了解操作系统（主要是windows和Linux）的基本原理（理解程序的运行环境），数据结构</p>
+<p><strong>加密算法：</strong><code>Tea/XTea/XXTea/IDEA/RC4/RC5/RC6/AES/DES/IDEA/MD5/SHA256/SHA1</code>等加密算法，大数加减乘除、最短路等传统算法</p>
+<p><strong>编码解码：</strong>主要是base编码</p>
+<p><strong>逆向的文件类型：</strong>在CTF比赛中，逆向的文件类型非常多样，从可执行文件、库文件、脚本文件到固件、内存转储和加密文件等，涵盖了不同的操作系统和应用场景。每种文件类型的分析方法和工具也有所不同，逆向工程的难度也取决于文件类型的复杂性。在比赛中，逆向选手需要掌握多个工具和技术来分析不同类型的文件并解锁其中隐藏的挑战。下面是一些<strong>常见</strong>的文件类型：<br><strong>可执行文件（Executable Files）</strong><br>描述：可执行文件包含程序代码，可以直接在操作系统上运行。这类文件通常是编译后的二进制文件。<br>常见类型：<br>Windows：**.exe<strong>（Windows可执行文件）、</strong>.dll<strong>（动态链接库）、</strong>.sys**（系统驱动程序文件）。<br>Linux：无扩展名，通常为 ELF 格式的可执行文件（如 <strong>a.out</strong>）。<br>逆向目的：分析程序的行为、寻找漏洞、破解保护、理解加密算法或破解软件许可验证等。<br>工具：IDA Pro, Ghidra, OllyDbg, x64dbg, Radare2。</p>
+<p><strong>库文件（Library Files）</strong><br>描述：库文件是包含可供其他程序调用的代码的文件，分为静态库和动态库。静态库在编译时被嵌入到程序中，而动态库在运行时被加载。<br>常见类型：<br>Windows：**.dll<strong>（动态链接库）、</strong>.lib<strong>（静态链接库）。<br>Linux：</strong>.so<strong>（共享库）、</strong>.a**（静态库）。<br>逆向目的：分析库中实现的功能、破解加密算法、研究未知函数等。<br>工具：IDA Pro, Ghidra, Radare2。</p>
+<p><strong>固件文件（Firmware Files）</strong><br>描述：固件是嵌入式设备的操作系统或程序，通常以二进制文件形式存在，控制硬件设备的操作。<br>常见类型：**.bin<strong>（二进制固件文件）、</strong>.img<strong>（映像文件）、</strong>.hex**（Intel Hex 格式）。<br>逆向目的：逆向固件以理解设备的工作原理、寻找漏洞、绕过设备的保护措施，或获取设备上的敏感信息。<br>工具：Binwalk, IDA Pro, Ghidra。</p>
+<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><p><strong>静态分析工具：</strong>IDA 是逆向工程中最常用的工具。</p>
+<p><strong>信息收集工具：</strong><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1837928-1-1.html">ExeInfoPe</a>或类似软件，可以查看待处理文件的32&#x2F;64位及是否加壳等信息。</p>
+<p><strong>软件脱壳工具：</strong>如常见的upx壳的脱壳工具<a target="_blank" rel="noopener" href="https://www.ghxi.com/upx.html">UPX shell</a>，以及一些其他脱壳工具<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-867990-1-1.html">XVolkolak</a>等。</p>
+<p><strong>动态调试工具</strong>：如<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1953170-1-1.html">IDA Pro（windows和Linux程序）</a>，<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-332158-1-1.html">GDB（Linux程序）</a>，<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-14986-1-1.html">OllyDbg（windows程序）</a>，<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1374894-1-1.html">x64dbg（Windows程序）</a>，用于动态分析程序。</p>
+<h2 id="常规逆向流程"><a href="#常规逆向流程" class="headerlink" title="常规逆向流程"></a>常规逆向流程</h2><ol>
+<li>使用IDA等静态分析工具收集信息，并根据这些静态信息进行<strong>google&#x2F;github&#x2F;edge搜索</strong></li>
+<li>研究程序的保护方法，如代码混淆，保护壳及反调试等技术，并设法破除或绕过保护</li>
+<li>反汇编目标软件，快速定位到关键代码进行分析</li>
+<li>结合动态调试，验证自己的初期猜想，在分析的过程中理清程序功能</li>
+<li>针对程序功能，写出对应脚本，求解出 flag</li>
+</ol>
+<p>具体的实现流程请参照<a target="_blank" rel="noopener" href="https://ctf-wiki.org/reverse/introduction/#_5">ctf-Wiki</a>，非常不错的文档。</p>
+<h2 id="CTF平台推荐"><a href="#CTF平台推荐" class="headerlink" title="CTF平台推荐"></a>CTF平台推荐</h2><p><a target="_blank" rel="noopener" href="https://ctf.bugku.com/">BugkuCTF</a>：一个综合性的CTF平台，含有多种类型的挑战题目，适合不同水平的安全爱好者练习和提高。<br><a target="_blank" rel="noopener" href="https://buuoj.cn/">BUUCTF</a>：由BUUoj团队维护的CTF平台，拥有丰富的题目资源，非常适合入门到高级的安全学习者。<br><a target="_blank" rel="noopener" href="https://www.ctfhub.com/">CTFHub</a>：提供在线的CTF训练平台，含有多种类别和难度的题目，便于选手直接在线练习。<br><a target="_blank" rel="noopener" href="https://ctf.show/">CTFshow</a>：一个内容丰富的CTF挑战付费平台，包含逆向、加密、Web等类型的题目，适合各种技能方向的安全研究者。<br><a target="_blank" rel="noopener" href="https://www.nssctf.cn/">NSSCTF</a>：由南京邮电大学网络安全实验室举办的CTF赛事，提供多个挑战项目，助力安全技能的提升。<br><a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/">攻防世界</a>：XCTF联盟推出的攻防实战平台，集成了多种实战场景，可以让用户在游戏中学习网络安全知识。</p>
+<p>有了这些基础，让我们开始寻找flag吧。😊</p>
 
                     
                 </div>
@@ -253,22 +267,22 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/11/14/CTF%E7%AB%9E%E8%B5%9B%E4%B8%ADReverse%E5%9F%BA%E7%A1%80-1/"
-                                   title="CTF竞赛中Reverse基础"
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/10/28/hello-world/"
+                                   title="Hello World！"
                                 >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">CTF竞赛中Reverse基础</span>
-                                        <span class="post-nav-item">Prev posts</span>
+                                        <span class="post-nav-title-item text-ellipsis">Hello World！</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
                                     </span>
                                 </a>
                             </div>
-                        
                         
                     </div>
                 
